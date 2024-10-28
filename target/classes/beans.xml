@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Load properties from application.properties -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:application.properties"/>
+    </bean>
+
+    <!-- DirectoryService Bean with Placeholder for directoryPath from properties -->
+    <bean id="directoryService" class="com.demo.directoryreader.service.DirectoryService">
+        <property name="directoryPath" value="${directory.path}"/>
+    </bean>
+
+    <!-- Main Application Bean -->
+    <bean id="directoryReaderApplication" class="com.demo.directoryreader.DirectoryReaderApplication">
+        <property name="directoryService" ref="directoryService"/>
+    </bean>
+</beans>
