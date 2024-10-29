@@ -33,8 +33,22 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>5.3.29</version>
+			<version>6.1.14</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.github.javaparser/javaparser-core -->
+		<dependency>
+			<groupId>com.github.javaparser</groupId>
+			<artifactId>javaparser-core</artifactId>
+			<version>3.26.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.javaparser</groupId>
+			<artifactId>javaparser-core</artifactId>
+			<version>3.26.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

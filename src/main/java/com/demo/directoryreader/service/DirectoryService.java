@@ -11,22 +11,8 @@ import java.util.stream.Stream;
 @Service
 public class DirectoryService {
 
-    private String directoryPath;
-
-    public void setDirectoryPath(String directoryPath) {
-        this.directoryPath = directoryPath;
+    public Path readDirectoryContent(String projectPath) {
+        return Paths.get(projectPath);
     }
 
-    public void listFilesInDirectory() {
-        Path path = Paths.get(directoryPath);
-
-        try (Stream<Path> paths = Files.list(path)) {
-            paths
-                    .filter(Files::isRegularFile)
-                    .forEach(file -> System.out.println("File: " + file.getFileName()));
-        } catch (IOException e) {
-            System.out.println("An error occurred while reading the directory.");
-            e.printStackTrace();
-        }
-    }
 }
